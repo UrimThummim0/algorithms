@@ -62,7 +62,7 @@ func pythagoreanTripletsBruteForce(sum int) {
 }
 
 /*
-Problem 5
+Problem 5:
 	Starting in the top left corner of a 2x2 grid,
    and only being able to move to the right and down,
    there are exactly 6 routes to the bottom right corner.
@@ -93,6 +93,15 @@ Find the smallest positive number less than 251758, containing the digits 2, 7, 
 
 	such that 2x, 3x, 4x, 5x, and 6x are happy numbers.
 */
+
 func main() {
 	fmt.Println("------------  TechFest :: Tsihoarana RASOLOFONDRAIBE  -----------")
+	fmt.Println("Problem 1: ")
+	fmt.Println("Problem 2: ")
+	fmt.Println("Problem 3: ")
+	fmt.Println("Problem 4: ")
+	pythagoreanTripletsBruteForce(1000)
+	fmt.Println("Problem 5: ")
+	fmt.Println("Problem 6: ")
+	fmt.Println("Problem 7: ")
 }
