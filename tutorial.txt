@@ -1,0 +1,99 @@
+Step 1: Install Go
+If you haven’t installed Go yet, download and install the latest version from the official Go website.
+
+To check if Go is installed correctly:
+go version
+
+Step 2: Set Up Go Workspace
+Go projects can be created in your $GOPATH directory, but it's also common to use Go modules for managing dependencies.
+
+1. Create a Directory for Your Project:
+Navigate to the location where you want to create your Go project:
+mkdir ~/go-projects
+cd ~/go-projects
+
+2. Initialize a Go Module:
+Run the following command to initialize a Go module in your project:
+go mod init my-first-project
+Replace my-first-project with the name of your project.
+
+3. Create Your First Go File:
+In your project directory, create a Go file (e.g., main.go):
+touch main.go
+Open it in a text editor and write a simple "Hello, World!" program:
+
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+
+Step 3: Run Your Project
+To run the Go program, use the following command:
+go run main.go
+This should output:
+Hello, World!
+
+Step 4: Add Dependencies
+If you want to use external packages, you can add them by running:
+go get <package-name>
+For example, to use the gorilla/mux package for HTTP routing:
+go get github.com/gorilla/mux
+
+Then, import and use it in your project:
+package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+    "github.com/gorilla/mux"
+)
+
+func main() {
+    r := mux.NewRouter()
+    r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "Hello, Go!")
+    }).Methods("GET")
+
+    log.Fatal(http.ListenAndServe(":8080", r))
+}
+
+Step 5: Run and Test Your Project
+To test your project with the added dependencies, run:
+go run main.go
+Your Go web server will start on port 8080, and you can visit it in a browser at http://localhost:8080.
+
+Step 6: Build and Compile
+To build a binary executable, run:
+go build
+This will create an executable file named after your project (e.g., my-first-project).
+
+You can then run the executable:
+./my-first-project
+
+Step 7: Version Control with Git (Optional)
+If you'd like to version control your project with Git:
+
+1. Initialize a Git repository:
+git init
+
+2. Add your project files:
+git add .
+git commit -m "Initial commit"
+
+3. Create a remote repository on GitHub or another platform, and push your code:
+git remote add origin <remote-repository-URL>
+git push -u origin master
+
+Project Structure
+A typical Go project structure may look like this:
+
+my-first-project/
+├── go.mod            # Go module definition
+├── go.sum            # Go dependency checksum
+├── main.go           # Main program file
+└── README.md         # Optional: Project documentation
+"""
