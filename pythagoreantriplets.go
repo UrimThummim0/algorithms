@@ -17,5 +17,5 @@ func pythagoreanTripletsBruteForce() {
 
 func main() {
 	fmt.Println("Pythagorean Triplets")
-	pythagoreanTriplets()
+	pythagoreanTripletsBruteForce()
 }
